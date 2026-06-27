@@ -2,7 +2,7 @@
 package com.java.series;
 import java.util.Scanner;
 public class CustomSeries3 {
-    static void main() {
+    static void main() { //public declaration is redundant in java 25.
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         long num = 0;
