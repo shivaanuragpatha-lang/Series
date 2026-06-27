@@ -1,22 +1,30 @@
+/*printing ccustom series in the following format : 11,28,327,464,5125,......*/
 package com.java.series;
 import java.util.Scanner;
 public class CustomSeries3 {
     static void main() {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        String num = "0";
-        int count = 0;
+        long num = 0;
+        int count;
+        int result;
         for (int i = 1; i <= n; i++) {
-            int result = i*i*i;
-            int digit = result % 10;
-            result = result / 10;
-            count = count + 1;
-            for (int j = 1; j <= count; j++) {
-                num =  num + "0";
+            result = i*i*i;
+            count =0;
+            int temp = result;
+            while (temp>0) {
+                int digit = temp%10;
+                count = count + 1;
+                temp = temp/10;
             }
-            num = (num) + result;
-            System.out.println(num+", ");
+            num = (long)i*(long)Math.pow(10,count) + result;
+            System.out.print(num);
+            if(i<n){
+                System.out.print(",");
+
+            }
         }
+
         sc.close();
     }
 }
